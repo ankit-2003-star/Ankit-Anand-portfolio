@@ -1,3 +1,71 @@
+/* ---------- Boot sequence & site reveal ---------- */
+.site {
+  opacity: 0;
+}
+
+.site-visible {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.boot-lines {
+  width: 100%;
+  max-width: 560px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.boot-lines p {
+  margin-bottom: 0.55rem;
+  animation: fadeIn 0.25s ease both;
+}
+
+.boot-caret {
+  color: var(--amber);
+  margin-right: 0.4em;
+}
+
+.boot-lines p:last-of-type {
+  color: var(--text);
+}
+
+.boot-cursor {
+  margin-top: 0.2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amber), var(--blue));
+  transform-origin: 0% 50%;
+  z-index: 40;
+}
+
 /* ---------- Nav ---------- */
 .nav {
   position: fixed;
@@ -52,9 +120,90 @@
   color: var(--amber);
 }
 
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  z-index: 30;
+}
+
+.nav-burger span {
+  height: 1.5px;
+  width: 100%;
+  background: var(--text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-burger.is-open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-burger.is-open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.nav-mobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 25;
+  background: rgba(10, 12, 16, 0.96);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: opacity 0.25s ease, max-height 0.35s ease;
+}
+
+.nav-mobile.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  max-height: 100vh;
+}
+
+.nav-mobile a:hover {
+  color: var(--amber);
+}
+
+.nav.is-open {
+  background: rgba(10, 12, 16, 0.96);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.page-content {
+  transition: transform 0.35s ease;
+}
+
+.page-content.nav-open {
+  transform: translateY(var(--nav-menu-height));
+}
+
 @media (max-width: 780px) {
   .nav-links {
     display: none;
+  }
+  .nav-cta {
+    display: none;
+  }
+  .nav-burger {
+    display: flex;
   }
   .nav {
     padding: 1.2rem 1.25rem;
@@ -160,6 +309,13 @@
   padding-bottom: 2px;
 }
 
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .hero-links a:hover {
   color: var(--amber);
 }
@@ -168,6 +324,15 @@
   position: relative;
   height: min(560px, 62vh);
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 .hero-canvas-hint {
@@ -185,11 +350,62 @@
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 7rem;
+    padding-top: 6rem;
   }
   .hero-canvas {
-    height: 380px;
+    height: 340px;
     order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto;
+    padding: 4rem 1rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .hero-name {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .hero-role,
+  .hero-typewriter,
+  .hero-tagline {
+    font-size: 0.94rem;
+  }
+
+  .hero-tagline {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.92rem;
+    justify-content: center;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    gap: 0.9rem;
+    font-size: 0.82rem;
+  }
+
+  .hero-canvas {
+    height: 260px;
+  }
+
+  .hero-canvas-hint {
+    bottom: 0.75rem;
+    font-size: 0.64rem;
   }
 }
 
@@ -264,6 +480,109 @@
   font-size: 0.82rem;
 }
 
+/* ---------- Timeline ---------- */
+.timeline-note {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 1.5rem;
+}
+
+.timeline-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  box-shadow: 0 0 0 2px var(--line);
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+}
+
+.timeline-dot.dot-education {
+  background: var(--blue);
+}
+.timeline-dot.dot-work {
+  background: var(--amber);
+}
+.timeline-dot.dot-milestone {
+  background: #9ea6b3;
+}
+
+.timeline-line {
+  flex: 1;
+  width: 1px;
+  background: var(--line);
+  margin-top: 0.4rem;
+}
+
+.timeline-content {
+  padding-bottom: 2.6rem;
+}
+
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.72rem;
+}
+
+.timeline-type {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  letter-spacing: 0.08em;
+}
+
+.timeline-type.type-education {
+  color: var(--blue);
+  border-color: var(--blue-dim);
+}
+.timeline-type.type-work {
+  color: var(--amber);
+  border-color: var(--amber-dim);
+}
+.timeline-type.type-milestone {
+  color: #9ea6b3;
+}
+
+.timeline-period {
+  color: var(--text-muted);
+}
+
+.timeline-role {
+  margin-top: 0.7rem;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.timeline-org {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--amber-dim);
+}
+
+.timeline-desc {
+  margin-top: 0.6rem;
+  max-width: 60ch;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 /* ---------- Focus grid ---------- */
 .focus-grid {
   display: grid;
@@ -315,6 +634,7 @@
   transition: transform 0.15s ease-out, border-color 0.2s ease;
   will-change: transform;
   height: 100%;
+  padding: 1rem;
 }
 
 .tilt-card:hover .tilt-card-inner {

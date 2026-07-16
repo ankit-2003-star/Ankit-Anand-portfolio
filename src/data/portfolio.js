@@ -146,3 +146,51 @@ export const projects = [
 ];
 
 export const orbitNodes = ["JS", "React", "Node", "Py", "ML", "SQL"];
+
+// TODO — replace these placeholders with your real education / experience
+// (copy from your LinkedIn: linkedin.com/in/ankitanand16). Each item just
+// needs a role, org, period and 1-2 line description.
+export const timeline = [
+  {
+    period: "2023 — Present",
+    role: "Bachelor of Technology (B.Tech), Computer Science & Engineering",
+    org: "Birla Institute Of Technology, Mesra",
+    desc: "CGPA: 9.35/10. Relevant coursework: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Compiler Design, Cryptography & Network Security, and Artificial Intelligence & Machine Learning.",
+    type: "education",
+  },
+  {
+    period: "June 2026 - July 2026",
+    role: "GovTech Intern",
+    org: "KPMG India",
+    desc: "Developed a full-stack Attendance Management System for Government schools with role-based authentication, student attendance tracking, leave management, and analytics using React, FastAPI, MongoDB, and JWT.",
+    type: "work",
+  },
+  {
+    period: "May 2026 - July 2026",
+    role: "Artificial Intelligence Intern",
+    org: "Codec Technologies",
+    desc: "Completed a hands-on Artificial Intelligence internship where I developed machine learning projects, explored data-driven solutions, and strengthened my Python and AI development skills.",
+    type: "work",
+  },
+  {
+    period: "2025",
+    role: "Certification",
+    org: "IIT Kharagpur",
+    desc: "Awarded Gold Medal in Internet of Things (IoT) course.",
+    type: "milestone",
+  },
+  {
+    period: "May 2020 – Mar 2022",
+    role: "Intermediate (Science, Computer Science)",
+    org: "Delhi Public School, Ranchi",
+    desc: "Scored 91% in CBSE Class XII with Physics, Chemistry, Mathematics, and Computer Science, building a strong foundation in analytical thinking and programming.",
+    type: "education",
+  },
+  {
+    period: "2009 – 2020",
+    role: "Secondary Education",
+    org: "Tender Heart Senior Secondary School",
+    desc: "Scored 96.4% in CBSE Class X and graduated among the top three students in the class, demonstrating consistent academic excellence.",
+    type: "education",
+  }
+];

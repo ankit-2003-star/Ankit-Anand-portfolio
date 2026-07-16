@@ -1,15 +1,16 @@
 import { skillGroups } from "../data/portfolio";
+import Reveal from "./Reveal";
 
 export default function Skills() {
   return (
     <section id="skills" className="section">
-      <div className="section-head">
-        <p className="eyebrow">03 — stack</p>
+      <Reveal className="section-head">
+        <p className="eyebrow">04 — stack</p>
         <h2 className="section-title">Tools I reach for</h2>
-      </div>
+      </Reveal>
       <div className="skills-grid">
-        {skillGroups.map((group) => (
-          <div className="skill-panel" key={group.label}>
+        {skillGroups.map((group, i) => (
+          <Reveal delay={i * 0.06} key={group.label} className="skill-panel">
             <span className="skill-panel-label mono">{group.label}</span>
             <ul className="skill-chips">
               {group.items.map((item) => (
@@ -18,7 +19,7 @@ export default function Skills() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

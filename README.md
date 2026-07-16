@@ -1,51 +1,190 @@
-# Ankit Anand — Portfolio
+<div align="center">
 
-A dark, terminal-inspired portfolio built with Vite + React (JavaScript), featuring an
-interactive, draggable 3D scene in the hero (react-three-fiber / three.js) and tilting
-3D project cards.
+# 🚀 Ankit Anand Portfolio
 
-## Stack
+### Full Stack Developer • AI Enthusiast • B.Tech CSE Student
 
-- Vite + React (JS)
-- three.js + @react-three/fiber + @react-three/drei — the draggable 3D hero scene
-- framer-motion — installed and ready if you want to add extra motion
-- Plain CSS with a small design-token system (see `src/index.css`)
+A modern, interactive, and responsive portfolio built to showcase my skills, projects, certifications, and journey as a developer.
 
-## Getting started
+<!-- <p>
+
+<a href="https://your-portfolio.vercel.app">
+<img src="https://img.shields.io/badge/Live-Demo-000?style=for-the-badge&logo=vercel">
+</a>
+
+<a href="https://github.com/ankit-2003-star/ankit-portfolio">
+<img src="https://img.shields.io/github/stars/yourusername/ankit-portfolio?style=for-the-badge">
+</a>
+
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react">
+
+<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite">
+
+</p> -->
+
+</div>
+
+---
+
+## 📸 Preview
+
+<p align="center">
+<img src="./assets/homepage.gif" width="100%" alt="Portfolio Preview">
+</p>
+
+---
+
+# ✨ About
+
+This portfolio represents my work, technical expertise, and development journey.
+
+It combines modern UI, smooth animations, responsive layouts, and performance optimization to create an engaging experience across all devices.
+
+---
+
+# 🌟 Features
+
+- 🎨 Modern UI/UX
+- 📱 Fully Responsive
+- ⚡ Built with Vite
+- 🎬 Smooth Scroll Animations
+- 💻 Interactive Hero Section
+- 👨 About Me
+- 🛠 Technical Skills
+- 🚀 Featured Projects
+- 📜 Career Timeline
+- 📞 Contact Section
+- 🌙 Beautiful Dark Theme
+- 🚀 Optimized Performance
+
+---
+
+# 🖥 Tech Stack
+
+| Frontend | Tools |
+|----------|-------|
+| React | VS Code |
+| Vite | Git |
+| JavaScript | GitHub |
+| HTML5 | Vercel |
+| CSS3 | npm |
+
+---
+
+# 📂 Project Structure
+
+```text
+src
+│
+├── assets
+├── components
+│   ├── Hero.jsx
+│   ├── HeroScene.jsx
+│   ├── About.jsx
+│   ├── Skills.jsx
+│   ├── Projects.jsx
+│   ├── Timeline.jsx
+│   ├── Contact.jsx
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── Reveal.jsx
+│   ├── ScrollProgress.jsx
+│   ├── TiltCard.jsx
+│   └── ...
+│
+├── data
+│   └── portfolio.js
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+# 🚀 Getting Started
+
+Clone Repository
+
+```bash
+git clone https://github.com/ankit-2003-star/Ankit-Anand-portfolio.git
+```
+
+Install Dependencies
 
 ```bash
 npm install
+```
+
+Run Development Server
+
+```bash
 npm run dev
 ```
 
-Then open the printed local URL (usually http://localhost:5173).
-
-To build for production:
+Create Production Build
 
 ```bash
 npm run build
+```
+
+Preview Production Build
+
+```bash
 npm run preview
 ```
 
-## Structure
+---
 
-```
-src/
-  data/portfolio.js     ← all your content lives here: name, bio, skills, projects
-  components/
-    HeroScene.jsx        ← the draggable 3D core (drag to rotate, auto-spins when idle)
-    TiltCard.jsx          ← reusable 3D-tilt card used by Focus & Projects
-    Nav.jsx, Hero.jsx, About.jsx, Focus.jsx, Skills.jsx, Projects.jsx, Contact.jsx, Footer.jsx
-  App.jsx / App.css       ← page composition + component styles
-  index.css               ← design tokens (colors, fonts), global + section styles
-```
+# 📄 Website Sections
 
-## Personalizing
+🏠 Hero
 
-- **Content**: edit `src/data/portfolio.js` — profile info, skill groups, focus areas,
-  and the project list (pulled from your pinned GitHub repos + ML projects).
-- **Colors/fonts**: edit the CSS variables at the top of `src/index.css`.
-- **Resume link**: add a `resumeUrl` to `profile` in `portfolio.js` and wire it into
-  `Hero.jsx`'s CTA buttons if you want a "Download résumé" button.
-- **Deploying**: this is a static site after `npm run build` (output in `dist/`) —
-  works out of the box on Vercel, Netlify, GitHub Pages, or Cloudflare Pages.
+👨 About
+
+💻 Skills
+
+🚀 Projects
+
+📜 Timeline
+
+📞 Contact
+
+---
+
+# 🎯 Highlights
+
+- Clean Component Architecture
+- Smooth Animations
+- Responsive Layout
+- Fast Loading
+- SEO Friendly
+- Modern Design
+- Easy to Customize
+
+---
+
+# 🌐 Live Website
+
+https://your-portfolio.vercel.app
+
+---
+
+# 📬 Contact
+
+📧 ankitanand160304@gmail.com
+
+<!-- 💼 LinkedIn
+
+🐙 GitHub
+
+🌐 Portfolio
+
+--- -->
+
+<div align="center">
+
+### ⭐ If you like this project, consider giving it a Star.
+
+Made with ❤️ by Ankit Anand
+
+</div>
