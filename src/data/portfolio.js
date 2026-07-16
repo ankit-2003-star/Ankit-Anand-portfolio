@@ -147,9 +147,7 @@ export const projects = [
 
 export const orbitNodes = ["JS", "React", "Node", "Py", "ML", "SQL"];
 
-// TODO — replace these placeholders with your real education / experience
-// (copy from your LinkedIn: linkedin.com/in/ankitanand16). Each item just
-// needs a role, org, period and 1-2 line description.
+
 export const timeline = [
   {
     period: "2023 — Present",
@@ -190,7 +188,7 @@ export const timeline = [
     period: "2009 – 2020",
     role: "Secondary Education",
     org: "Tender Heart Senior Secondary School",
-    desc: "Scored 96.4% in CBSE Class X and graduated among the top three students in the class, demonstrating consistent academic excellence.",
+    desc: "Achieved 96.4% in CBSE Class X, securing a place among the top three students in the school out of 500+ students, demonstrating consistent academic excellence.",
     type: "education",
   }
 ];
